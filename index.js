@@ -12,7 +12,7 @@ function randomPwd() {
 function getPwd(length=15) {
     let p1 = ""
     let p2 = ""
-    for (i=0; i<length; i++) {
+    for (let i = 0; i < length; i++) {
         p1+=randomPwd()
         p2+=randomPwd()
     }
@@ -23,3 +23,11 @@ function getPwd(length=15) {
 function generatePasswords() {
     getPwd()
 }
+
+// Attach event listener so it works even if inline handlers are blocked by CSP
+if (generateBtn) {
+    generateBtn.addEventListener("click", generatePasswords)
+}
+
+// Also expose for inline onclick or module-bundled builds
+window.generatePasswords = generatePasswords
