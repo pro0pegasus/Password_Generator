@@ -9,7 +9,7 @@ function randomPwd() {
     return characters[Math.floor(Math.random()*characters.length)]
 }
 
-function getPwd(length=14) {
+function getPwd(length=15) {
     let p1 = ""
     let p2 = ""
     for (i=0; i<length; i++) {
