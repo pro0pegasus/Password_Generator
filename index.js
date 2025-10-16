@@ -24,9 +24,9 @@ function generatePasswords() {
 }
 
 // Bind click without inline handlers (CSP-safe)
-document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('generate')
-    if (btn) btn.addEventListener('click', generatePasswords)
-})
+// document.addEventListener('DOMContentLoaded', () => {
+//    const btn = document.getElementById('generate')
+//    if (btn) btn.addEventListener('click', generatePasswords)
+//})
 
 
