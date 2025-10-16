@@ -22,12 +22,13 @@ function getPwd(length=15) {
 
 function generatePasswords() {
     getPwd()
+    if (generateBtn) {
+    generateBtn.addEventListener("click", generatePasswords)
+}
 }
 
 // Attach event listener so it works even if inline handlers are blocked by CSP
-if (generateBtn) {
-    generateBtn.addEventListener("click", generatePasswords)
-}
+
 
 // Also expose for inline onclick or module-bundled builds
 window.generatePasswords = generatePasswords
