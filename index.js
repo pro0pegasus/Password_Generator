@@ -15,12 +15,18 @@ function getPwd(length=15) {
         p1+=randomPwd()
         p2+=randomPwd()
     }
-    passwordEl.value = p1
-    passwordEl2.value = p2
+    if (passwordEl) passwordEl.value = p1
+    if (passwordEl2) passwordEl2.value = p2
 }
 
 function generatePasswords() {
     getPwd()
 }
+
+// Bind click without inline handlers (CSP-safe)
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('generate')
+    if (btn) btn.addEventListener('click', generatePasswords)
+})
 
 
