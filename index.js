@@ -3,7 +3,6 @@ const characters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O"
 
 let passwordEl = document.getElementById("password")
 let passwordEl2 = document.getElementById("password2")
-let generateBtn = document.getElementById("generate")
 
 function randomPwd() {
     return characters[Math.floor(Math.random()*characters.length)]
@@ -22,13 +21,13 @@ function getPwd(length=15) {
 
 function generatePasswords() {
     getPwd()
-    if (generateBtn) {
-    generateBtn.addEventListener("click", generatePasswords)
-}
+    //if (generateBtn) {
+    //    generateBtn.addEventListener("click", generatePasswords)
+//}
 }
 
 // Attach event listener so it works even if inline handlers are blocked by CSP
 
 
 // Also expose for inline onclick or module-bundled builds
-window.generatePasswords = generatePasswords
+//window.generatePasswords = generatePasswords
